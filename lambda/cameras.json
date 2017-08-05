@@ -1,0 +1,12 @@
+{
+	"1": {
+		"friendlyName": "office camera",
+		"friendlyDescription": "Camera Pi in Office",
+		"uri": "rtsp://officecamerapi.dev-cloud.co.uk:443/h264"
+	},
+	"2": {
+		"friendlyName": "hall camera",
+		"friendlyDescription": "Camera Pi in Hall",
+		"uri": "rtsp://hallcamerapi.dev-cloud.co.uk:443/h264"
+	}
+}

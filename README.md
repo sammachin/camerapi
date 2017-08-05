@@ -1,17 +1,14 @@
-# camerapi
-Build your own security camera for the Echo Show
-
-## Requirements:
+Requirements:
 * A Raspberry PI, I've tested this on the Pi2, Pi3 and PiZeroW Running Raspbian (tested this with the July 2017 Build)
 * A Camera module fitted
 * A domain name with access to the DNS server to create A and TXT records
 * An AWS Account
 * An Alexa Developer Account
 
-## Steps
+
 1) Start with a fresh install of raspbian for this I've used teh July 2017 version
 
-2) Run raspi-config
+2) Run `raspi-config`
 change the default password
 edit the hostname
 enable the camera in interfaceing options
@@ -19,7 +16,7 @@ expand the filesystem in advance options
 
 
 3) Install camera v4l2 module:
-`vi /etc/modules`
+```vi /etc/modules
 Add a line at the botom of that file
 `bcm2835-v4l2```
 
@@ -41,17 +38,18 @@ cd raspi
 make
 make install
 ```
+
 6) Copy the startup script
 
 
-7) Install and configure stunnel
+7) Install and configure stunnel (as root)
+`apt-get install stunnel`
+Place the stunnel.conf file at /etc/stunnel/stunnel.conf
 
 
-8) Get an SSL Cert using lets encrypt from your main machine as certbot doesn't easily run on raspbian(look at doing on the pi https://www.k2dls.net/blog/2017/01/04/installing-certbot-on-raspbian-jessie/)
-
+8) Get an SSL Cert using lets encrypt from your main machine as certbot doesn't easily run on raspbian
 `certbot -d [hostname] --rsa-key-size 4096 --manual --preferred-challenges dns certonly`
-
-9) Create a single cert file and copy over to the Pi
+Copy the files `privkey.pem` and `fullchain.pem` created by certbot over to the Pi in `/etc/stunnel`
 
 10) Setup the Alexa Skill
 
