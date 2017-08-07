@@ -1,4 +1,8 @@
-Requirements:
+#CamerPi
+
+NOTE: This is a very early version and has a number of complex steps, I'm planning to improve the process in the future
+
+## Requirements:
 * A Raspberry PI, I've tested this on the Pi2, Pi3 and PiZeroW Running Raspbian (tested this with the July 2017 Build)
 * A Camera module fitted
 * A domain name with access to the DNS server to create A and TXT records
@@ -16,9 +20,10 @@ expand the filesystem in advance options
 
 
 3) Install camera v4l2 module:
-```vi /etc/modules
+`vi /etc/modules`
 Add a line at the botom of that file
-`bcm2835-v4l2```
+`bcm2835-v4l2`
+
 
 4) Install live555 media server as pi user not root
 ```
