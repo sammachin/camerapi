@@ -1,4 +1,4 @@
-#CamerPi
+# CameraPi
 
 NOTE: This is a very early version and has a number of complex steps, I'm planning to improve the process in the future
 
