@@ -10,7 +10,7 @@ NOTE: This is a very early version and has a number of complex steps, I'm planni
 * An Alexa Developer Account
 
 
-1) Start with a fresh install of raspbian for this I've used teh July 2017 version
+1) Start with a fresh install of raspbian for this I've used the July 2017 version
 
 2) Run `raspi-config` as root 
 change the default password
