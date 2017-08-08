@@ -45,7 +45,7 @@ make install
 ```
 
 6) Copy the startup script
-Place start.sh in the `homee` directory of the `pi` user (not root)
+Place start.sh in the `home` directory of the `pi` user (not root)
 run `start.sh`
 You can now verify that your camera is working properly using VLC on your computer by opening a network address of rtsp://[YOUR PI IP]:8080/h264
 
@@ -60,7 +60,6 @@ Yes Putting Private IP's into public DNS is discouraged, but if this is only for
 9) Get an SSL Cert using lets encrypt from your main machine as certbot doesn't easily run on raspbian
 `certbot -d [hostname] --rsa-key-size 4096 --manual --preferred-challenges dns certonly`
 It will ask you to verify domain ownership by creating a special DNS record, be careful with this as if you make a mistake it can take a long time for the DNS chace to expire so you can try again!
-
 Copy the files `privkey.pem` and `fullchain.pem` created by certbot over to the Pi in `/etc/stunnel`
 
 10) Start stunnel as root
