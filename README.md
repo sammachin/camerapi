@@ -42,7 +42,7 @@ wget http://s3.sammachin.com/raspi_rtsp.tgz
 tar -xvzf raspi_rtsp.tgz
 cd raspi
 make
-make install
+sudo make install
 ```
 
 6) Copy the startup script
