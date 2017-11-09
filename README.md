@@ -37,11 +37,12 @@ sudo make install
 
 5) Next install the raspi rtsp server (modified from code found on https://www.raspberrypi.org/forums/viewtopic.php?t=52071)
 ```
+cd liveMedia
 wget http://s3.sammachin.com/raspi_rtsp.tgz
 tar -xvzf raspi_rtsp.tgz
 cd raspi
 make
-make install
+sudo make install
 ```
 
 6) Copy the startup script
@@ -52,6 +53,13 @@ You can now verify that your camera is working properly using VLC on your comput
 7) Install and configure stunnel (as root)
 `apt-get install stunnel`
 Place the stunnel.conf file at /etc/stunnel/stunnel.conf
+
+Edit the file /etc/default/stunnel4
+changing
+
+ENABLED=0
+to
+ENABLED=1
 
 8) Setup DNS entry for the Camera's private IP address on your LAN
 I use AWS Route53 but any DNS host should be fine, just create a A record for the Pi's IP address and give it a hostname like camerapi.[YOURDOMAIN.COM] 
